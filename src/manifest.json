@@ -1,0 +1,26 @@
+{
+    "name": "一淘助手",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "description": "一淘优惠购信息显示",
+    //"update_url": "",
+    "icons": {
+        "48": "icon/etao.png"
+    },
+    "homepage_url": "http://www.etao.com",
+    "page_action": {
+        "default_icon": "image/tao_red.png",
+        "default_title": "一淘优惠购"
+    },
+    "permissions": ["tabs", "http://*.taobao.com/*", "http://*.etao.com/*"],
+    "background": {
+        "scripts": ["background.js", "tool.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*.taobao.com/*","http://*.tmall.com/*"],
+            "css": ["etaor.css"],
+            "js": ["jquery-2.0.0.min.js", "tool.js", "etaor.js"]
+        }
+    ]
+}
